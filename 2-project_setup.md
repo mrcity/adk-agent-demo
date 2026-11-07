@@ -71,13 +71,19 @@ Find your closest region and replace `insert-region-here` with it in the followi
 export REGION=[insert-region-here]
 ```
 
-2. Create and change into a new project directory named coffee-barista-agent:
+2. Clone this repository:
 
 ```
-mkdir coffee-barista-agent && cd coffee-barista-agent
+git clone https://github.com/mrcity/adk-agent-demo
 ```
 
 3. Install Python dependencies
+
+Change into the codelab directory:
+
+```
+cd adk-agent-demo
+```
 
 The dependencies are already called out in `requirements.txt`, so simply install the requirements like this:
 
