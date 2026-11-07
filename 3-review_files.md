@@ -4,9 +4,9 @@
 
 Rather than copying them into your workspace, let's just review them here.
 
-### menu.json - A quick & dirty way to give the AI some context
+### [menu.json](menu.json) - A quick & dirty way to give the AI some context
 
-To ground the AI Barista and prevent it from hallucinating non-existent items, we provide a local menu dataset at [menu.json](menu.json). The agent will read this file at runtime via a custom tool.
+This file grounds the AI Barista to prevent it from hallucinating non-existent items. The agent will read this file at runtime via a custom tool. Later, we will also encode it into a Firebase vector store and demonstrate live updates.
 
 #### Discussion: Local JSON vs. Live Databases
 
