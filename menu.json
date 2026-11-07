@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ethiopian-yirgacheffe",
+    "name": "Ethiopian Yirgacheffe Whole Beans (12oz)",
+    "category": "Whole Bean",
+    "price": 21.00,
+    "description": "Washed light roast with floral jasmine notes, bright bergamot acidity, and candied lemon.",
+    "roast_level": "Light",
+    "origin": "Yirgacheffe, Ethiopia",
+    "recommended_brew": "V60 Pour-over, Chemex, AeroPress",
+    "allergens": []
+  },
+  {
+    "id": "sumatra-mandheling",
+    "name": "Sumatra Mandheling Whole Beans (12oz)",
+    "category": "Whole Bean",
+    "price": 19.50,
+    "description": "Heavy-bodied dark roast featuring earthy cedar, dark baker's cocoa, and low acidity.",
+    "roast_level": "Dark",
+    "origin": "Sumatra, Indonesia",
+    "recommended_brew": "French Press, Espresso, Moka Pot",
+    "allergens": []
+  },
+  {
+    "id": "honey-oat-latte",
+    "name": "Signature Honey Oat Latte",
+    "category": "Prepared Beverage",
+    "price": 6.25,
+    "description": "Espresso paired with steamed oat milk and clover honey. Available hot or iced.",
+    "roast_level": null,
+    "origin": null,
+    "recommended_brew": null,
+    "allergens": ["Gluten (Oat)"]
+  },
+  {
+    "id": "almond-croissant",
+    "name": "Artisan Almond Croissant",
+    "category": "Pastry",
+    "price": 4.75,
+    "description": "Twice-baked butter croissant filled with almond frangipane and topped with sliced almonds.",
+    "roast_level": null,
+    "origin": null,
+    "recommended_brew": null,
+    "allergens": ["Tree Nuts (Almonds)", "Dairy", "Wheat", "Eggs"]
+  }
+]
