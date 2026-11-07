@@ -25,56 +25,15 @@ Note: API enablement can take 1–2 minutes to propagate. If the database creati
 ### 2. Seed Firestore with the Menu Data
 To quickly seed your Firestore database with the menu items from your menu.json file, you can run a Python script locally in Cloud Shell.
 
-Install the Firestore and GenAI client libraries locally in Cloud Shell to run the seeding script:
+1. Install the Firestore and GenAI client libraries locally in Cloud Shell to run the seeding script:
 
 ```
 pip3 install google-cloud-firestore==2.27.0 google-genai==2.11.0
 ```
 
-Create a seeding script seed.py:
+2. Study the script `seed.py` to see how it utilizes a text embedding model to encode the menu data into the vector store.
 
-cloudshell edit seed.py
-Paste the following code to seed.py:
-
-```
-# seed.py
-import json
-import os
-from google import genai
-from google.cloud import firestore
-from google.cloud.firestore_v1.vector import Vector
-
-db = firestore.Client(database="coffee-menu")
-client = genai.Client(
-   vertexai=True,
-   project=os.environ.get("PROJECT_ID"),
-   location=os.environ.get("REGION", "us-central1")
-)
-
-with open("menu.json", "r") as f:
-   menu_items = json.load(f)
-
-for item in menu_items:
-   # Use the name as the document ID
-   doc_id = item["name"].lower().replace(" ", "-")
-
-   # Generate text embedding using Gemini Enterprise Agent Platform text-embedding-005 model
-   text_to_embed = f"{item['name']}: {item['description']}"
-   response = client.models.embed_content(
-       model="text-embedding-005",
-       contents=text_to_embed,
-   )
-   embedding = response.embeddings[0].values
-
-   # Add embedding vector to the menu item data
-   item["embedding"] = Vector(embedding)
-
-   db.collection("menu").document(doc_id).set(item)
-
-print("Firestore menu collection seeded with vector embeddings successfully!")
-```
-
-Run the script:
+3. Run the script:
 
 ```
 python3 seed.py
