@@ -115,7 +115,7 @@ We won't use these right away, but we'll need them built for Firestore in Step 4
 2. Grant the Gemini Enterprise Agent Platform user role (`roles/aiplatform.user`) to the new service account:
 
 ```
-  gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:barista-agent-sa@$PROJECT_ID.iam.gserviceaccount.com" \
+  gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:barista-agent-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
     --role="roles/aiplatform.user"
 ```

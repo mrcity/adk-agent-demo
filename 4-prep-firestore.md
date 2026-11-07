@@ -59,8 +59,8 @@ Note: Firestore index creation runs in the background and can take a few minutes
 For your Cloud Run service to query Firestore, you must grant its service account the **Cloud Datastore User** (`roles/datastore.user`) role:
 
 ```
-gcloud projects add-iam-policy-binding $PROJECT_ID \
- --member="serviceAccount:barista-agent-sa@$PROJECT_ID.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+ --member="serviceAccount:barista-agent-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
  --role="roles/datastore.user"
 ```
 Note: Although we are using Cloud Firestore in Native mode, Google Cloud utilizes the unified Cloud Datastore IAM roles (roles/datastore.viewer or roles/datastore.user) to manage access control.

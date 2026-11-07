@@ -16,8 +16,8 @@ gcloud run deploy coffee-barista \
   --labels dev-tutorial=codelab-streamlit-rag-adk \
   --command "/cnb/lifecycle/launcher" \
   --args "sh,-c,python3 -m streamlit run app.py --server.port=\$PORT --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false" \
-  --service-account "barista-agent-sa@$PROJECT_ID.iam.gserviceaccount.com" \
-  --set-env-vars GOOGLE_GENAI_USE_ENTERPRISE=TRUE,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_LOCATION=global
+  --service-account "barista-agent-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+  --set-env-vars GOOGLE_GENAI_USE_ENTERPRISE=TRUE,GOOGLE_CLOUD_PROJECT=$GOOGLE_CLOUD_PROJECT,GOOGLE_CLOUD_LOCATION=global
 ```
 
 > Note: If prompted to create an Artifact Registry Docker repository to store built containers (e.g., `Do you want to continue (Y/n)?`), type `Y` to continue. The initial source deployment builds the container in the cloud. This step usually takes 3-5 minutes to complete.
