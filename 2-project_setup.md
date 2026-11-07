@@ -52,6 +52,12 @@ gcloud services enable \
 
 Get the API key from [Google AI Studio](https://aistudio.google.com).
 
+Stash your Gemini API key as an environment variable:
+
+```
+export GEMINI_API_KEY=AQ...etc...
+```
+
 #### Note to Enterprise users looking for better governance
 Another alternative is to use Gemini Agent Platform and its application-default credentials. This is the "Get a Gemini API Key" button shown at the front page of the GCP Console. But, for prototyping purposes, getting the API key from AI Studio works effectively.
 
@@ -69,6 +75,7 @@ Find your closest region and replace `insert-region-here` with it in the followi
 
 ```
 export REGION=[insert-region-here]
+# In NA, use us-central1
 ```
 
 2. Clone this repository:

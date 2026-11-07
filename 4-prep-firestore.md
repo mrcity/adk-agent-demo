@@ -36,6 +36,7 @@ Create a seeding script seed.py:
 cloudshell edit seed.py
 Paste the following code to seed.py:
 
+```
 # seed.py
 import json
 import os
@@ -71,9 +72,13 @@ for item in menu_items:
    db.collection("menu").document(doc_id).set(item)
 
 print("Firestore menu collection seeded with vector embeddings successfully!")
+```
+
 Run the script:
 
+```
 python3 seed.py
+```
 
 ### 3. Create Firestore Vector Index
 
