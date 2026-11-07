@@ -31,7 +31,7 @@ To quickly seed your Firestore database with the menu items from your menu.json 
 pip3 install google-cloud-firestore==2.27.0 google-genai==2.11.0
 ```
 
-2. Study the script `seed.py` to see how it utilizes a text embedding model to encode the menu data into the vector store.
+2. Study the script [seed.py](seed.py) to see how it utilizes a text embedding model to encode the menu data into the vector store.
 
 3. Run the script:
 

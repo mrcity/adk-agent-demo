@@ -6,7 +6,7 @@ Rather than copying them into your workspace, let's just review them here.
 
 ### menu.json - A quick & dirty way to give the AI some context
 
-To ground the AI Barista and prevent it from hallucinating non-existent items, you'll create a local menu dataset. The agent will read this file at runtime via a custom tool.
+To ground the AI Barista and prevent it from hallucinating non-existent items, we provide a local menu dataset at [menu.json](menu.json). The agent will read this file at runtime via a custom tool.
 
 #### Discussion: Local JSON vs. Live Databases
 
@@ -16,11 +16,11 @@ For a quick tutorial or prototype, a local JSON file eliminates initial database
 
 Using a live database allows coffee shop managers to add seasonal items, update prices, or adjust allergen tags dynamically without rebuilding the container image or redeploying the application code. We will be using a live database as an optional step later in the codelab.
 
-### agent.py - The overall behavior of the agents, and ADK scaffolding
+### [agent.py](agent.py) - The overall behavior of the agents, and ADK scaffolding
 
-### tools.py - Actions and specific routines that agents can call upon to refine answers
+### [tools.py](tools.py) - Actions and specific routines that agents can call upon to refine answers
 
-### app.py - Serve the chatbot through a Streamlit interface
+### [app.py](app.py) - Serve the chatbot through a Streamlit interface
 
 #### 💬 Discussion: Model Tradeoffs & Retrieval Token Efficiency
 
