@@ -92,8 +92,8 @@ gcloud firestore indexes composite create \
  --query-scope=COLLECTION \
  --database="coffee-menu" \
  --field-config=field-path=embedding,vector-config='{"dimension":"768", "flat": "{}"}'
-Note: Firestore index creation runs in the background and can take a few minutes to complete. You can proceed with the next steps of the codelab while the index is building.
 ```
+Note: Firestore index creation runs in the background and can take a few minutes to complete. You can proceed with the next steps of the codelab while the index is building.
 
 ### 4. Grant Firestore Access to the Service Account
 

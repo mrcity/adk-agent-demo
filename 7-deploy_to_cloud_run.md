@@ -2,25 +2,11 @@
 
 ## 7. Deploy the agent to Cloud Run
 
-You will deploy the Streamlit application directly from source using Cloud Run's built-in buildpacks. To follow the principle of least privilege, you will create and deploy using a dedicated custom service account rather than using the default Compute Engine service account.
+Recall that earlier, in Step 2, we created a service account that the application uses so it can obtain a specific set of credentials and permissions it needs to do its job. It's good practice to grant the service account the "least privilege" required for the application to function properly.
 
-1. Create a dedicated service account:
+Anyway, that is all done now, so let's get straight to the deployment.
 
-```
-  gcloud iam service-accounts create barista-agent-sa \
-    --description="Service account for Coffee Barista ADK agent on Cloud Run" \
-    --display-name="Barista Agent Service Account"
-```
-
-2. Grant the Gemini Enterprise Agent Platform user role (`roles/aiplatform.user`) to the new service account:
-
-```
-  gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:barista-agent-sa@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/aiplatform.user"
-```
-
-3. Deploy the service using `gcloud run deploy`, passing the new service account email via the `--service-account` flag:
+1. Deploy the service using `gcloud run deploy`, passing the new service account email via the `--service-account` flag:
 
 ```
 gcloud run deploy coffee-barista \
@@ -36,7 +22,7 @@ gcloud run deploy coffee-barista \
 
 > Note: If prompted to create an Artifact Registry Docker repository to store built containers (e.g., `Do you want to continue (Y/n)?`), type `Y` to continue. The initial source deployment builds the container in the cloud. This step usually takes 3-5 minutes to complete.
 
-4. Once deployed, locate the service URL in the command output.
+2. Once deployed, locate the service URL in the command output.
 
 ### 💬 Discussion: Deploying Containers vs. Source, and IAM Security
 
